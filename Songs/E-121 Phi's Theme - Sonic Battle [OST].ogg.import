@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ceygwflcuay30"
+path="res://.godot/imported/E-121 Phi's Theme - Sonic Battle [OST].ogg-4d3c20201eb8f6c21f6d01865384ee2a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Songs/E-121 Phi's Theme - Sonic Battle [OST].ogg"
+dest_files=["res://.godot/imported/E-121 Phi's Theme - Sonic Battle [OST].ogg-4d3c20201eb8f6c21f6d01865384ee2a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

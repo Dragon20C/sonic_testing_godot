@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ArenaPackage" load_steps=4 format=3 uid="uid://dd85yrln34edy"]
+
+[ext_resource type="PackedScene" uid="uid://im5t2hppk624" path="res://Arenas/arena/library_arena.tscn" id="1_0uur1"]
+[ext_resource type="Script" uid="uid://c87nem03fdwfr" path="res://Scripts/arena_package.gd" id="1_s38et"]
+[ext_resource type="AudioStream" uid="uid://cpn0i56bo8gff" path="res://Songs/Library - Sonic Battle [OST].ogg" id="2_83sin"]
+
+[resource]
+script = ExtResource("1_s38et")
+arena_title = "Library"
+arena_scene = ExtResource("1_0uur1")
+arena_song = ExtResource("2_83sin")
+metadata/_custom_type_script = "uid://c87nem03fdwfr"

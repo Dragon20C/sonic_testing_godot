@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ArenaPackage" load_steps=4 format=3 uid="uid://dcichg7848d1v"]
+
+[ext_resource type="PackedScene" uid="uid://bg3cygwvxhuo8" path="res://Arenas/arena/colosseum_arena.tscn" id="1_bp60i"]
+[ext_resource type="Script" uid="uid://c87nem03fdwfr" path="res://Scripts/arena_package.gd" id="1_hqcwh"]
+[ext_resource type="AudioStream" uid="uid://ceygwflcuay30" path="res://Songs/E-121 Phi's Theme - Sonic Battle [OST].ogg" id="2_jdrn1"]
+
+[resource]
+script = ExtResource("1_hqcwh")
+arena_title = "Colosseum"
+arena_scene = ExtResource("1_bp60i")
+arena_song = ExtResource("2_jdrn1")
+metadata/_custom_type_script = "uid://c87nem03fdwfr"

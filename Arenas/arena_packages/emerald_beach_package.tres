@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ArenaPackage" load_steps=4 format=3 uid="uid://c8nt5dc0c3kdb"]
+
+[ext_resource type="PackedScene" uid="uid://cwin02vrpk8ht" path="res://Arenas/arena/emerald_beach-arena.tscn" id="1_jjnd2"]
+[ext_resource type="Script" uid="uid://c87nem03fdwfr" path="res://Scripts/arena_package.gd" id="1_mp1ya"]
+[ext_resource type="AudioStream" uid="uid://cf611not6d3gk" path="res://Songs/Emerald Beach - Sonic Battle [OST].ogg" id="2_tj5kj"]
+
+[resource]
+script = ExtResource("1_mp1ya")
+arena_title = "Emerald Beach"
+arena_scene = ExtResource("1_jjnd2")
+arena_song = ExtResource("2_tj5kj")
+metadata/_custom_type_script = "uid://c87nem03fdwfr"

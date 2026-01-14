@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ou5hele1eei0"
+path="res://.godot/imported/Metal Depot - Sonic Battle [OST].ogg-4e9b8a2cf5e56ee2edbe877f10436aff.oggvorbisstr"
+
+[deps]
+
+source_file="res://Songs/Metal Depot - Sonic Battle [OST].ogg"
+dest_files=["res://.godot/imported/Metal Depot - Sonic Battle [OST].ogg-4e9b8a2cf5e56ee2edbe877f10436aff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

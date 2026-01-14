@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5flw2csy2q7x"
+path="res://.godot/imported/Battle Highway - Sonic Battle [OST].ogg-9f1f4ac33de2806444bcb19343fc672e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Songs/Battle Highway - Sonic Battle [OST].ogg"
+dest_files=["res://.godot/imported/Battle Highway - Sonic Battle [OST].ogg-9f1f4ac33de2806444bcb19343fc672e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

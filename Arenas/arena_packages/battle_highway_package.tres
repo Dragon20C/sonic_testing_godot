@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ArenaPackage" load_steps=4 format=3 uid="uid://b6shr5icroudw"]
+
+[ext_resource type="Script" uid="uid://c87nem03fdwfr" path="res://Scripts/arena_package.gd" id="1_csxed"]
+[ext_resource type="PackedScene" uid="uid://dmxdoudmlrkbm" path="res://Arenas/arena/battle_highway-arena.tscn" id="1_y5axc"]
+[ext_resource type="AudioStream" uid="uid://b5flw2csy2q7x" path="res://Songs/Battle Highway - Sonic Battle [OST].ogg" id="2_274lg"]
+
+[resource]
+script = ExtResource("1_csxed")
+arena_title = "Battle Highway"
+arena_scene = ExtResource("1_y5axc")
+arena_song = ExtResource("2_274lg")
+metadata/_custom_type_script = "uid://c87nem03fdwfr"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dqkejnna046vh"
+path="res://.godot/imported/Holy Summit - Sonic Battle [OST].ogg-aa6e1852be631935061e910a64c2bc6a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Songs/Holy Summit - Sonic Battle [OST].ogg"
+dest_files=["res://.godot/imported/Holy Summit - Sonic Battle [OST].ogg-aa6e1852be631935061e910a64c2bc6a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

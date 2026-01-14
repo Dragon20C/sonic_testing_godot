@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Combo" load_steps=2 format=3 uid="uid://8pe8uncal1wu"]
+
+[ext_resource type="Script" uid="uid://cjri6tdb8i8sb" path="res://Scripts/input combo system/combo.gd" id="1_tc3q4"]
+
+[resource]
+script = ExtResource("1_tc3q4")
+combo_type = "dash"
+sequence = Array[int]([0, 0])
+metadata/_custom_type_script = "uid://cjri6tdb8i8sb"

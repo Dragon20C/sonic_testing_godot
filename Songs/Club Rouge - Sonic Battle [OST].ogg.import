@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dqivv82jurjsx"
+path="res://.godot/imported/Club Rouge - Sonic Battle [OST].ogg-a8e62d9db728651a6ebcdecfb54fc2c9.oggvorbisstr"
+
+[deps]
+
+source_file="res://Songs/Club Rouge - Sonic Battle [OST].ogg"
+dest_files=["res://.godot/imported/Club Rouge - Sonic Battle [OST].ogg-a8e62d9db728651a6ebcdecfb54fc2c9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

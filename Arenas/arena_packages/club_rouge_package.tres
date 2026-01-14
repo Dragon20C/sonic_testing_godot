@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ArenaPackage" load_steps=4 format=3 uid="uid://cg3jlv3pdm6ao"]
+
+[ext_resource type="Script" uid="uid://c87nem03fdwfr" path="res://Scripts/arena_package.gd" id="1_omeee"]
+[ext_resource type="PackedScene" uid="uid://clq0x1wrtax4q" path="res://Arenas/arena/club_rouge_arena.tscn" id="1_vg6ct"]
+[ext_resource type="AudioStream" uid="uid://dqivv82jurjsx" path="res://Songs/Club Rouge - Sonic Battle [OST].ogg" id="2_4qdbi"]
+
+[resource]
+script = ExtResource("1_omeee")
+arena_title = "Club Rouge"
+arena_scene = ExtResource("1_vg6ct")
+arena_song = ExtResource("2_4qdbi")
+metadata/_custom_type_script = "uid://c87nem03fdwfr"

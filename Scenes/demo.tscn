@@ -1,0 +1,90 @@
+[gd_scene load_steps=15 format=3 uid="uid://danfiasaesa73"]
+
+[ext_resource type="Script" uid="uid://v3orgpsnc0mc" path="res://Scripts/demo.gd" id="1_glc8m"]
+[ext_resource type="Script" uid="uid://cjkpdcsbg7wp2" path="res://Scripts/camera_gimble.gd" id="2_glc8m"]
+[ext_resource type="Script" uid="uid://c87nem03fdwfr" path="res://Scripts/arena_package.gd" id="2_qwjex"]
+[ext_resource type="Resource" uid="uid://b6shr5icroudw" path="res://Arenas/arena_packages/battle_highway_package.tres" id="3_yc4g0"]
+[ext_resource type="Resource" uid="uid://dgm4l458ibqjg" path="res://Arenas/arena_packages/chao_ruins_package.tres" id="4_lsgl7"]
+[ext_resource type="Resource" uid="uid://c8nt5dc0c3kdb" path="res://Arenas/arena_packages/emerald_beach_package.tres" id="5_nynt4"]
+[ext_resource type="Resource" uid="uid://ci7553wl5id28" path="res://Arenas/arena_packages/holy_summit_package.tres" id="6_6hfpq"]
+[ext_resource type="Resource" uid="uid://bqyoxlr4sxe81" path="res://Arenas/arena_packages/tails_lab_package.tres" id="7_a1i4p"]
+[ext_resource type="Resource" uid="uid://dgpytbuvrlei0" path="res://Arenas/arena_packages/amys_room_package.tres" id="8_yc4g0"]
+[ext_resource type="Resource" uid="uid://dd85yrln34edy" path="res://Arenas/arena_packages/library_package.tres" id="9_nynt4"]
+[ext_resource type="Resource" uid="uid://743ugnee7oa7" path="res://Arenas/arena_packages/metal_depot_package.tres" id="10_6hfpq"]
+[ext_resource type="Resource" uid="uid://8io7ixvan7ug" path="res://Arenas/arena_packages/green_hills_zone_package.tres" id="11_6hfpq"]
+[ext_resource type="Resource" uid="uid://cg3jlv3pdm6ao" path="res://Arenas/arena_packages/club_rouge_package.tres" id="12_l50oi"]
+[ext_resource type="Resource" uid="uid://dcichg7848d1v" path="res://Arenas/arena_packages/colosseum_package.tres" id="13_84mi4"]
+
+[node name="Demo" type="Node3D" node_paths=PackedStringArray("arena_root", "song_player", "previous_label", "current_label", "next_label")]
+script = ExtResource("1_glc8m")
+arena_packages = Array[ExtResource("2_qwjex")]([ExtResource("3_yc4g0"), ExtResource("4_lsgl7"), ExtResource("5_nynt4"), ExtResource("6_6hfpq"), ExtResource("7_a1i4p"), ExtResource("8_yc4g0"), ExtResource("9_nynt4"), ExtResource("10_6hfpq"), ExtResource("11_6hfpq"), ExtResource("12_l50oi"), ExtResource("13_84mi4")])
+arena_root = NodePath("Arena")
+song_player = NodePath("SongPlayer")
+previous_label = NodePath("CanvasLayer/MarginContainer/HBoxContainer/Previous")
+current_label = NodePath("CanvasLayer/MarginContainer/HBoxContainer/Current")
+next_label = NodePath("CanvasLayer/MarginContainer/HBoxContainer/Next")
+
+[node name="SongPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Arena" type="Node3D" parent="."]
+
+[node name="CameraGimble" type="Node3D" parent="."]
+script = ExtResource("2_glc8m")
+
+[node name="Camera3D" type="Camera3D" parent="CameraGimble"]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.7071068, 0, -0.7071068, 0.70710677, 0, 2, 3)
+fov = 80.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="Previous" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "- Previous -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "<"
+
+[node name="Current" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "- Emerald Beach -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = ">"
+
+[node name="Next" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "- Next -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/Right" to="." method="_on_right_pressed"]
