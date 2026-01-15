@@ -56,12 +56,14 @@ func handle_modifiers(delta : float) -> void:
 			puppet.velocity.y -= puppet.gravity * delta
 			puppet.handle_movement(delta)
 			
-			for combo in combos:
-				if puppet.input_master.match_combo(combo):
-					match combo.combo_type:
-						"dash":
-							current_modifier = modifiers.AirDash
-							return
+			if Input.is_action_just_pressed("jump") and not has_air_dashed:
+				current_modifier = modifiers.AirDash
+			#for combo in combos:
+				#if puppet.input_master.match_combo(combo):
+					#match combo.combo_type:
+						#"dash":
+							#current_modifier = modifiers.AirDash
+							#return
 			
 		modifiers.AirDash:
 			if not has_air_dashed:

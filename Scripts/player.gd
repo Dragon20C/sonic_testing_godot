@@ -11,7 +11,7 @@ class_name Player
 @export var jump_force : float = 3.5
 @export var air_acceleration : float = 4.0
 @export var top_speed_acceleration : float = 25.0
-@export var normal_acceleration : float = 12.0
+@export var normal_acceleration : float = 30.0
 @export var decceleration : float = 18.0
 
 var anim_controller : AnimationController
@@ -46,7 +46,7 @@ func _process(_delta: float) -> void:
 func handle_input() -> void:
 	input_dir.x = Input.get_axis("move_left","move_right")
 	input_dir.y = Input.get_axis("move_forward","move_backward")
-	
+	input_dir = input_dir.normalized()
 	# storing the last direction without it being zero.
 	if not input_dir.is_equal_approx(Vector2.ZERO):
 		direction = input_dir
