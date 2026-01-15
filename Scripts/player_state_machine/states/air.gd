@@ -5,15 +5,20 @@ enum modifiers {Air,AirDash}
 var current_modifier : modifiers = modifiers.Air
 var delay_duration : float = 0.0
 var has_air_dashed : bool = false
+var has_pressed_air_dash : bool = false
 @export var combos : Array[Combo]
 
 func _on_enter(_context : Dictionary = {}) -> void:
 	#print("Entered %s state" % name)
 	current_modifier = modifiers.Air
 	puppet.anim_controller.set_base("falling")
-	
+	has_pressed_air_dash = false
 	if _context.has("delay"):
 		delay_duration = 0.25
+	
+	if _context.has("air_dash"):
+		if _context.get("air_dash") == true:
+			has_pressed_air_dash = true
 		
 	has_air_dashed = false
 
@@ -56,7 +61,7 @@ func handle_modifiers(delta : float) -> void:
 			puppet.velocity.y -= puppet.gravity * delta
 			puppet.handle_movement(delta)
 			
-			if Input.is_action_just_pressed("jump") and not has_air_dashed:
+			if (Input.is_action_just_pressed("jump") or has_pressed_air_dash) and not has_air_dashed:
 				current_modifier = modifiers.AirDash
 			#for combo in combos:
 				#if puppet.input_master.match_combo(combo):

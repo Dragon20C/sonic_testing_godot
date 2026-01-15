@@ -1,9 +1,12 @@
 extends PuppetS
 
+var air_dash_requested : bool = false
+
 func _on_enter(_context : Dictionary = {}) -> void:
 	#print("Entered %s state" % name)
 	puppet.velocity.y = puppet.jump_force
 	puppet.anim_controller.set_base("jumping")
+	air_dash_requested = false
 
 func _on_exit() -> void:
 	#print("Exited %s state" % name)
@@ -15,6 +18,9 @@ func _on_update(_delta : float) -> void:
 func _on_physics_update(_delta : float) -> void:
 	puppet.velocity.y -= puppet.gravity * _delta
 	puppet.handle_movement(_delta)
+	
+	if Input.is_action_just_pressed("jump"):
+		air_dash_requested = true
 	
 	handle_transitions()
 
@@ -33,4 +39,4 @@ func handle_transitions() -> void:
 		false:
 			# only transition to air state if we are falling
 			if puppet.velocity.y < 0.0:
-				transition("Air")
+				transition("Air",{"air_dash" : air_dash_requested})
