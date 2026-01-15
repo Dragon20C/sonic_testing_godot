@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Sonic Map tester"
+config/name="Sonic Testing"
 run/main_scene="uid://co23ky461slvf"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
@@ -70,5 +70,7 @@ special={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/lossless_compression/force_png=true
 anti_aliasing/quality/screen_space_aa=2

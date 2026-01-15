@@ -18,7 +18,6 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 2
 tonemap_mode = 2
-glow_enabled = true
 
 [node name="amys_room" instance=ExtResource("1_2wh5w")]
 
