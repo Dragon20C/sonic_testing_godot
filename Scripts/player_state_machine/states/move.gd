@@ -2,22 +2,12 @@ extends PuppetS
 
 
 
-#var dash_r : Array[String] = ["right","right"]
-#var dash_l : Array[String] = ["left","left"]
-#var dash_f : Array[String] = ["forward","forward"]
-#var dash_b : Array[String] = ["backward","backward"]
-
 var is_stopping : bool = false
 var has_dashed : bool = false
 var is_slow_turning : bool = false
 enum modifiers {Running, Dashing}
 var current_modifier : modifiers = modifiers.Running
 @export var combos : Array[Combo]
-
-#var dash_gestures : Array[Array]
-#
-#func _ready() -> void:
-	#dash_gestures = [dash_r,dash_l,dash_f,dash_b]
 
 func _on_enter(_context : Dictionary = {}) -> void:
 	#print("Entered %s state" % name)

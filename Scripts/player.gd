@@ -40,7 +40,8 @@ func _process(_delta: float) -> void:
 	handle_input()
 	handle_shadow()
 	
-	
+#func _physics_process(delta: float) -> void:
+	#print("Speed : %s" % velocity.length())
 
 func handle_input() -> void:
 	input_dir.x = Input.get_axis("move_left","move_right")

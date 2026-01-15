@@ -1,10 +1,13 @@
 extends PuppetS
 
-
+var delay_duration : float = 0.0
 
 func _on_enter(_context : Dictionary = {}) -> void:
 	#print("Entered %s state" % name)
 	puppet.anim_controller.set_base("falling")
+	
+	if _context.has("delay"):
+		delay_duration = 0.25
 	#puppet.animator.play("falling")
 
 func _on_exit() -> void:
@@ -15,12 +18,18 @@ func _on_update(_delta : float) -> void:
 	pass
 
 func _on_physics_update(_delta : float) -> void:
+	delay_duration -= _delta
 	puppet.velocity.y -= puppet.gravity * _delta
 	puppet.handle_movement(_delta)
 	
 	handle_transitions()
 
 func handle_transitions() -> void:
+	
+	if Input.is_action_just_pressed("attack") and delay_duration < 0.0:
+		transition("attack",{"AttackType" : "Air"})
+		return
+	
 	match puppet.is_on_floor():
 		true:
 			if not puppet.input_dir.is_equal_approx(Vector2.ZERO):

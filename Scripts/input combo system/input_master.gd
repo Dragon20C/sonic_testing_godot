@@ -7,7 +7,7 @@ var time_threshold : float = 0.3 # 250 Ms
 var events : Array[Event] = []
 var event_size : int = 0
 
-func _update(delta: float) -> void:
+func _update(_delta: float) -> void:
 	handle_inputs()
 	
 	# for debugging
