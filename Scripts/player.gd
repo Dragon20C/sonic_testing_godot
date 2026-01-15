@@ -8,7 +8,7 @@ class_name Player
 
 @export_group("Stats Config")
 @export var top_speed : float = 3.5
-@export var jump_force : float = 5.0
+@export var jump_force : float = 3.5
 @export var air_acceleration : float = 4.0
 @export var top_speed_acceleration : float = 25.0
 @export var normal_acceleration : float = 12.0

@@ -68,7 +68,7 @@ func _update_modifiers(delta : float) -> void:
 			
 			# slow down the turning
 			if is_slow_turning:
-				puppet.velocity *= 0.85
+				puppet.velocity *= 0.9
 			
 			puppet.handle_movement(delta)
 			
@@ -92,7 +92,7 @@ func _update_modifiers(delta : float) -> void:
 				var dash_height : float = 2.0
 				var direction_force : float = 3.5
 				var dir : Vector2 = puppet.direction
-				puppet.facing_dir = 1 if dir.x > 0 else -1
+				#puppet.facing_dir = 1 if dir.x > 0 else -1
 				puppet.animator.flip_h = puppet.facing_dir == -1
 				var force_vec : Vector3 = Vector3(dir.x,0.0,dir.y)  * direction_force
 				force_vec.y = dash_height
