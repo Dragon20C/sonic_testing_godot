@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cunt6l88m44qk"]
+
+[ext_resource type="PackedScene" uid="uid://cdt03ltp6gsna" path="res://Scenes/player.tscn" id="1_0jvr3"]
+[ext_resource type="PackedScene" uid="uid://cwin02vrpk8ht" path="res://Arenas/arena/emerald_beach-arena.tscn" id="2_me5f7"]
+
+[node name="TestZone" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_0jvr3")]
+
+[node name="emerald_beach" parent="." instance=ExtResource("2_me5f7")]

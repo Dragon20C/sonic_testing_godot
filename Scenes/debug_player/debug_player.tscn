@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4nu5gghfnvwm"]
+
+[ext_resource type="Script" uid="uid://bsdn2718ew2v2" path="res://Scripts/debug player/debug_player.gd" id="1_d51is"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d51is"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_d51is"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d51is"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_o2f7r"]
+size = Vector3(0.5, 0.5, 0.1)
+
+[node name="DebugPlayer" type="CharacterBody3D" node_paths=PackedStringArray("root_body")]
+script = ExtResource("1_d51is")
+root_body = NodePath("RootBody")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_d51is")
+
+[node name="RootBody" type="Node3D" parent="."]
+
+[node name="Body" type="MeshInstance3D" parent="RootBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("SphereMesh_d51is")
+skeleton = NodePath("../..")
+
+[node name="Arrow" type="MeshInstance3D" parent="RootBody"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.15, 0)
+material_override = SubResource("StandardMaterial3D_d51is")
+mesh = SubResource("PrismMesh_o2f7r")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 2, 3)

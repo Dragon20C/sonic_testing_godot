@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sonic Testing"
-run/main_scene="uid://co23ky461slvf"
+run/main_scene="uid://cunt6l88m44qk"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -19,8 +19,8 @@ func _on_update(_delta : float) -> void:
 
 func _on_physics_update(_delta : float) -> void:
 	
-	if Input.is_action_just_pressed("attack"):
-		puppet.anim_controller.play("landing",true)
+	#if Input.is_action_just_pressed("attack"):
+		#puppet.anim_controller.play("landing",true)
 	
 	puppet.apply_decceleration(_delta)
 	puppet.move_and_slide()
@@ -31,6 +31,9 @@ func _on_physics_update(_delta : float) -> void:
 func handle_transitions() -> void:
 	match puppet.is_on_floor():
 		true:
+			if Input.is_action_just_pressed("attack"):
+				transition("Attack",{"AttackType":"Basic"})
+			
 			if not puppet.input_dir.is_equal_approx(Vector2.ZERO):
 				transition("Move")
 			

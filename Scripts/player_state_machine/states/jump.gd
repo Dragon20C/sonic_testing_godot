@@ -27,7 +27,7 @@ func _on_physics_update(_delta : float) -> void:
 func handle_transitions() -> void:
 	
 	if Input.is_action_just_pressed("attack"):
-		transition("attack",{"AttackType" : "Air"})
+		transition("Attack",{"AttackType" : "Air"})
 		return
 	
 	match puppet.is_on_floor():

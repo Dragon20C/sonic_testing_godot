@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 func transition_to(_state : String, _context : Dictionary = {}) -> void:
 	
 	if not has_state(_state):
-		print("Failed to transition to the next state (%s)" % _state)
+		print("Failed to transition from (%s) to the next state (%s)" % [_current_state.name,_state])
 		return
 	# we call the exit function on the current state
 	# useful for cleaning up logic or variables

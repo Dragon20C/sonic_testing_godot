@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6c150dpk4nr5"
-path="res://.godot/imported/sonic sprite sheet.png-67acc07ea0596ded51ef23d866c7567b.ctex"
+uid="uid://4ehq17nmbfkw"
+path="res://.godot/imported/pattern_checkerboard_1_2_0-0_0_1__hsla(30, 100_, 43_, 1.00)_hsla(20, 100_, 21_, 1.00).png-65f0ddda15cb26766e656e4a245071b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sonic sprite sheet.png"
-dest_files=["res://.godot/imported/sonic sprite sheet.png-67acc07ea0596ded51ef23d866c7567b.ctex"]
+source_file="res://sprites/pattern_checkerboard_1_2_0-0_0_1__hsla(30, 100_, 43_, 1.00)_hsla(20, 100_, 21_, 1.00).png"
+dest_files=["res://.godot/imported/pattern_checkerboard_1_2_0-0_0_1__hsla(30, 100_, 43_, 1.00)_hsla(20, 100_, 21_, 1.00).png-65f0ddda15cb26766e656e4a245071b8.ctex"]
 
 [params]
 
 compress/mode=0
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

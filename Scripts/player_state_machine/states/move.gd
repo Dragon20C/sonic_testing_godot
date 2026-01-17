@@ -40,11 +40,17 @@ func handle_transitions() -> void:
 			if current_modifier == modifiers.Dashing:
 				return
 			
+			if Input.is_action_just_pressed("attack"):
+				transition("Attack",{"AttackType":"Basic"})
+				return
+			
 			if puppet.velocity.is_equal_approx(Vector3.ZERO) and puppet.input_dir.is_equal_approx(Vector2.ZERO):
 				transition("Idle",{"stopping" : is_stopping})
+				return
 			
 			if Input.is_action_just_pressed("jump"):
 				transition("Jump")
+				return
 		false:
 			if current_modifier == modifiers.Dashing:
 				return

@@ -5,12 +5,14 @@ enum modifiers {Air,AirDash}
 var current_modifier : modifiers = modifiers.Air
 var delay_duration : float = 0.0
 var has_air_dashed : bool = false
+var has_landed : bool = false
 var has_pressed_air_dash : bool = false
 @export var combos : Array[Combo]
 
 func _on_enter(_context : Dictionary = {}) -> void:
 	#print("Entered %s state" % name)
 	current_modifier = modifiers.Air
+	has_landed = false
 	puppet.anim_controller.set_base("falling")
 	has_pressed_air_dash = false
 	if _context.has("delay"):
@@ -38,17 +40,19 @@ func _on_physics_update(_delta : float) -> void:
 func handle_transitions() -> void:
 	
 	if Input.is_action_just_pressed("attack") and delay_duration < 0.0:
-		transition("attack",{"AttackType" : "Air"})
+		transition("Attack",{"AttackType" : "Air"})
 		return
 	
 	match puppet.is_on_floor():
 		true:
 			if not puppet.input_dir.is_equal_approx(Vector2.ZERO):
+				has_landed = true
 				puppet.anim_controller.play("landing",true)
 				puppet.velocity = Vector3.ZERO
 				await puppet.animator.animation_finished
 				transition("Move")
 			else:
+				has_landed = true
 				puppet.anim_controller.play("landing",true)
 				puppet.velocity = Vector3.ZERO
 				await puppet.animator.animation_finished
@@ -62,7 +66,8 @@ func handle_modifiers(delta : float) -> void:
 			puppet.handle_movement(delta)
 			
 			if (Input.is_action_just_pressed("jump") or has_pressed_air_dash) and not has_air_dashed:
-				current_modifier = modifiers.AirDash
+				if not has_landed:
+					current_modifier = modifiers.AirDash
 			#for combo in combos:
 				#if puppet.input_master.match_combo(combo):
 					#match combo.combo_type:

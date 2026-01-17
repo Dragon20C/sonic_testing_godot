@@ -3,15 +3,16 @@ extends PuppetS
 enum modifiers {BasicAttack,AirAttack,SpecialAttack,BackAttack}
 var current_modifier : modifiers = modifiers.BasicAttack
 var is_attacking : bool = false
-var basic_combo_time_limit : float = 0.3 # 300 Ms
+var basic_combo_time_limit : float = 0.35 # 350 Ms
 var basic_combo_duration : float = 0.0
 var attack_timeline : Array[String] = []
-var current_combo_index : int = 1
+var current_combo_index : int = 0
 
 func _on_enter(_context : Dictionary = {}) -> void:
 	#print("Entered %s state" % name)
-	
-	puppet.anim_controller.set_base("falling")
+	current_combo_index = 0
+	basic_combo_duration = 0.0
+	puppet.anim_controller.set_base("idle")
 	attack_timeline.clear()
 	
 	if _context.has("AttackType"):
@@ -59,6 +60,7 @@ func handle_transitions() -> void:
 func handle_modifiers(delta : float) -> void:
 	match current_modifier:
 		modifiers.BasicAttack:
+			
 			basic_combo_duration += delta
 			# keeps track if multiple combo attack inputs but only for a short duration
 			if Input.is_action_just_pressed("attack") and basic_combo_duration < basic_combo_time_limit:
@@ -66,12 +68,18 @@ func handle_modifiers(delta : float) -> void:
 				if attack_timeline.size() < 3:
 					attack_timeline.append("attack")
 			
-			# we use a while loop to see if the current combo index is less then the timeline size
-			while current_combo_index < attack_timeline.size():
-				
-				## PLAY ANIMATION HERE##
-				
+			if current_combo_index != attack_timeline.size() and not is_attacking:
+				is_attacking = true
+				puppet.anim_controller.play("attack_" + str(current_combo_index + 1),true)
+				await puppet.animator.animation_finished
 				current_combo_index += 1
+				is_attacking = false
+			
+			
+			if current_combo_index == attack_timeline.size():
+				transition("Idle")
+			
+		
 		modifiers.AirAttack:
 			puppet.velocity *= 0.9
 			puppet.move_and_slide()
