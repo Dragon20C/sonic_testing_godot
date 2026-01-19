@@ -683,6 +683,7 @@ shadow_ray = NodePath("ShadowRay")
 
 [node name="Animations" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0)
+layers = 2
 cast_shadow = 0
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_f1ek2")

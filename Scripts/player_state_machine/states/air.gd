@@ -79,11 +79,11 @@ func handle_modifiers(delta : float) -> void:
 			if not has_air_dashed:
 				puppet.anim_controller.play("air_dash")
 				var dash_height : float = 2.5
-				var direction_force : float = 3.8
+				var direction_force : float = 3.0
 				var dir : Vector2 = puppet.direction
 				#puppet.facing_dir = 1 if dir.x > 0 else -1
 				puppet.animator.flip_h = puppet.facing_dir == -1
-				var force_vec : Vector3 = Vector3(dir.x,0.0,dir.y)  * direction_force
+				var force_vec : Vector3 = (Vector3(dir.x,0.0,dir.y).normalized())  * direction_force
 				force_vec.y = dash_height
 				puppet.velocity += force_vec
 				has_air_dashed = true

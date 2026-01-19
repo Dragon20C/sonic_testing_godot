@@ -74,7 +74,7 @@ func _update_modifiers(delta : float) -> void:
 			
 			# slow down the turning
 			if is_slow_turning:
-				puppet.velocity *= 0.9
+				puppet.velocity = Vector3.ZERO
 			
 			puppet.handle_movement(delta)
 			
